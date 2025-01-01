@@ -1,0 +1,30 @@
+# docker-compose.yml
+services:
+  django_app:
+    build: .
+    container_name: django_app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - DB_NAME=scraping_db
+      - DB_USER=siam
+      - DB_PASSWORD=siam123
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    networks:
+      - scrapy-project_app_network
+    working_dir: /app
+    command: >
+      sh -c "
+        python manage.py migrate &&
+        python manage.py runserver 0.0.0.0:8000
+      "
+
+networks:
+  scrapy-project_app_network:
+    external: true
