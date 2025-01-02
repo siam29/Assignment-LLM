@@ -65,6 +65,17 @@ docker-compose exec django_app python manage.py rewrite_titles --batch-size 2
 ```
 docker-compose exec django_app python manage.py generate_descriptions --batch-size 2
 ```
+
+- Generate hotel summaries
+
+```
+docker-compose exec django_app python manage.py generate_summaries --batch-size 2
+```
+
+- Generate hotel review
+```
+docker-compose exec django_app python manage.py generate_reviews --batch-size 2
+```
 ### Future Enhancements
 
 - Add a user-friendly frontend for managing property data.
