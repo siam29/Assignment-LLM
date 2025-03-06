@@ -1,6 +1,5 @@
 # LLM-Driven Property Rewriting Project
 This project is a Django-based CLI application designed to rewrite property information (titles and descriptions) using a Large Language Model (LLM). It integrates with the Ollama API to generate enhanced property summaries, reviews, and ratings. The project leverages Docker for containerized deployment and PostgreSQL for database management. It also incorporates data from a Scrapy project that scrapes hotel property information.
-Features
 
 ## LLM Integration:
 
